@@ -1,7 +1,7 @@
 import random
 
 words = ("apple","orange","banana","coconut","pineapple")
-#dictionary of key:()
+#dictionary of key
 hangman_art = {0: ("   ",
                                    "   ",
                                    "   "),
@@ -35,5 +35,16 @@ def display_answer(answer):
 
 
 def main():
-    pass
+    answer = random.choice(words)
+    hint = ["_"]*len(answer)
+    wrong_guesses = 0
+    guessed_letters = set()
+    is_running = True
+    while is_running:
+        display_man(wrong_guesses)
+        display_hint(hint)
+        guess = input("Guess a letter: ").lower()
 
+if __name__ == "__main__":
+
+     main()
