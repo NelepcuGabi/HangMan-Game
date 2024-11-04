@@ -1,6 +1,6 @@
 import random
+from words_list import words
 
-words = ("apple","orange","banana","coconut","pineapple")
 #dictionary of key
 hangman_art = {0: ("   ",
                                    "   ",
@@ -70,6 +70,12 @@ def main():
             display_man(wrong_guesses)
             display_answer(answer)
             print("YOU WIN")
+            is_running = False
+
+        elif wrong_guesses>=len(hangman_art)-1:
+            display_man(wrong_guesses)
+            display_answer(answer)
+            print("YOU LOSE")
             is_running = False
 
 if __name__ == "__main__":
